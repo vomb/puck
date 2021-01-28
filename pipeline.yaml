@@ -1,0 +1,16 @@
+
+
+protoToGo:
+  vomb/x/git/Subscribe:
+    git: $GIT
+    path: $PATH/**/*.proto
+    env:
+      PATH: api/proto/offer
+      GIT: github.com/vomb/baikal
+  vomb/x/dir/FromGit:
+    path: $PATH
+  vomb/x/proto/ToGo:
+    package: $GIT/$PATH
+  vomb/x/dir/ToGit:
+    path: $PATH
+    delete: "**.go"
